@@ -1,0 +1,9 @@
+export const UPDATE_CUR_PROD = 'UPDATE_CUR_PROD';
+export const ADD_TO_COMPARE = 'ADD_TO_COMPARE';
+export const REMOVE_TO_COMPARE = 'REMOVE_TO_COMPARE';
+export const CLEAN_COMPARE = 'CLEAN_COMPARE';
+export const FILTER_IP = 'FILTER_IP';
+export const FILTER_AREAID = 'FILTER_AREAID';
+export const SORT_BY_CREATED = 'SORT_BY_CREATED';
+export const SORT_BY_PREMIUM = 'SORT_BY_PREMIUM';
+export const REMOVE_SORT = 'REMOVE_SORT';
