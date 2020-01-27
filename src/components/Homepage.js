@@ -17,7 +17,6 @@ const Homepage = ({ allProds, compare, cleanCompare }) => {
         <div className='back'>
           <Link
             onClick={e => {
-              console.log(compare.length);
               if (compare.length <= 1) {
                 e.preventDefault();
               }
