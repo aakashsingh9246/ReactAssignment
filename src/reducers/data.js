@@ -76,18 +76,20 @@ export default function(state = initialState, action) {
       return {
         ...state,
         allProds: {
-          content: dummyData.content.sort((a, b) =>
-            a.totalAmount.amount < b.totalAmount.amount ? 1 : -1
-          )
+          content: dummyData.content
+            .slice()
+            .sort((a, b) =>
+              a.totalAmount.amount < b.totalAmount.amount ? 1 : -1
+            )
         }
       };
     case SORT_BY_CREATED:
       return {
         ...state,
         allProds: {
-          content: dummyData.content.sort((a, b) =>
-            a.plan.createdAt > b.plan.createdAt ? 1 : -1
-          )
+          content: dummyData.content
+            .slice()
+            .sort((a, b) => (a.plan.createdAt > b.plan.createdAt ? 1 : -1))
         }
       };
     case REMOVE_SORT:
