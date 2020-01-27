@@ -7,7 +7,7 @@ import { cleanCompare } from '../actions/action';
 import Filter from '../homeFeatures/Filter';
 import Sorting from '../homeFeatures/Sorting';
 
-const Homepage = ({ allProds, compare, cleanCompare, loading }) => {
+const Homepage = ({ allProds, compare, cleanCompare }) => {
   useEffect(() => {
     cleanCompare();
   }, [cleanCompare]);

@@ -11,10 +11,9 @@ import {
   REMOVE_SORT
 } from './types';
 
-const data = dummyData;
 const initialState = {
-  currentProduct: data.content[0],
-  allProds: data,
+  currentProduct: dummyData.content[0],
+  allProds: dummyData,
   compare: [],
   loading: true
 };
@@ -55,7 +54,7 @@ export default function(state = initialState, action) {
         ...state,
         allProds: {
           ...state.allProds,
-          content: data.content.filter(prod =>
+          content: dummyData.content.filter(prod =>
             prod.plan.insuranceProviderName
               .toLowerCase()
               .includes(payload.toLowerCase())
@@ -66,7 +65,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         allProds: {
-          content: data.content.filter(prod =>
+          content: dummyData.content.filter(prod =>
             prod.plan.planEligibility.serviceAreaIds[0]
               .toLowerCase()
               .includes(payload.toLowerCase())
@@ -77,7 +76,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         allProds: {
-          content: data.content.sort((a, b) =>
+          content: dummyData.content.sort((a, b) =>
             a.totalAmount.amount < b.totalAmount.amount ? 1 : -1
           )
         }
@@ -86,7 +85,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         allProds: {
-          content: data.content.sort((a, b) =>
+          content: dummyData.content.sort((a, b) =>
             a.plan.createdAt > b.plan.createdAt ? 1 : -1
           )
         }
@@ -94,7 +93,9 @@ export default function(state = initialState, action) {
     case REMOVE_SORT:
       return {
         ...state,
-        allProds: { content: data.content }
+        allProds: {
+          content: dummyData.content.slice()
+        }
       };
     default:
       return state;

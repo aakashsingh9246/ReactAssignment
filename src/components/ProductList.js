@@ -10,8 +10,6 @@ const ProductList = ({ prodData, addToCompare, removetToCompare, compare }) => {
   const updateCompare = () => {
     current
       ? removetToCompare(prodData.plan.id)
-      : compare.length >= 3
-      ? alert('only 3 item can be selected')
       : addToCompare(prodData.plan.id);
   };
 
@@ -21,8 +19,8 @@ const ProductList = ({ prodData, addToCompare, removetToCompare, compare }) => {
         <div className={`product bg-light ${current && 'selectedProd'}`}>
           <h2>{prodData.plan.planName}</h2>
           <div>{prodData.plan.insuranceProviderName}</div>
-          <div>Sum Insured :{prodData.sumInsured}</div>
-          <div>{prodData.totalAmount.amount}</div>
+          <div>Sum Insured - {prodData.sumInsured}</div>
+          <div>Premium Amount - {prodData.totalAmount.amount}</div>
           <div>
             <Link
               to={`/productDetails/${prodData.plan.id}`}

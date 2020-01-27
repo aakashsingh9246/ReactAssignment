@@ -2,10 +2,9 @@ import React, { useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setCurrProd } from '../actions/action';
-import Spinner from './Spinner';
 import { Link } from 'react-router-dom';
 
-const ProductDetails = ({ match, currentProduct, setCurrProd, loading }) => {
+const ProductDetails = ({ match, currentProduct, setCurrProd }) => {
   useEffect(() => {
     setCurrProd(match.params.id);
   }, [setCurrProd, match.params.id]);

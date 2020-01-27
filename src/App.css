@@ -275,7 +275,7 @@ button {
   width: 4rem;
 }
 
-/* Profiles Page */
+/* product Page */
 .product {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -286,7 +286,7 @@ button {
   margin-bottom: 1rem;
 }
 
-/* Profile Page */
+/* product Page */
 .product-grid {
   display: grid;
   grid-template-areas:
